@@ -1,0 +1,33 @@
+﻿<Window x:Class="AsyncDelegate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncDelegate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+            <Button x:Name="categoryBtn" Content="Категорий" Height="45" Click="ButtonCategoryClick"/>
+            <Button x:Name="productBtn" Content="Продукты" Height="45" Visibility="Collapsed" Click="ButtonProductClick"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+            <ListBox x:Name="somethings" SelectionMode="Extended" SelectionChanged="SelectSomethings" Visibility="Collapsed"/>
+            <ListBox x:Name="products" SelectionMode="Extended" SelectionChanged="SelectProducts"  Visibility="Visible"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+            <Button x:Name="addCategory" Content="Создать категорию" Width="150" Margin="50 0 0 0" Visibility="Hidden" Click="AddCategory"/>
+            <Button x:Name="addProduct" Content="Создать продукт" Width="150" Margin="200 0 0 0" Visibility="Hidden" Click="AddProduct"/>
+        </StackPanel>
+    </Grid>
+</Window>
